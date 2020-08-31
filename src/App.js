@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import Router from './router';
+//等同于 
+// import { default as Router } from './router';
 
 function App() {
   return (

@@ -13,5 +13,6 @@ const Router = () => (
         {/* Route负责匹配一个路径和渲染此路径的组件。 */}
     </Switch>
 );
+
 export default Router;
 // 把Router导出，这样在App中可以用它。
