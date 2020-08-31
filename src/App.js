@@ -5,6 +5,11 @@ import Router from './router';
 function App() {
   return (
     <BrowserRouter>
+      <ul>
+        <li><a href = "\">Home</a></li>
+        <li><a href = "\login">Login</a></li>
+        <li><a href = "\Register">Register</a></li>
+      </ul>
       <Router></Router>
     </BrowserRouter>
   );
