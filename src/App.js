@@ -11,11 +11,11 @@ function App() {
   return (
     <div className={styles.background}>
       <BrowserRouter>
-        <Menu theme = 'dark'>
+        {/* <Menu theme = 'dark'>
           <Menu.Item><NavLink to = "/">Home</NavLink></Menu.Item>
           <Menu.Item><NavLink to = "/login">Login</NavLink></Menu.Item>
           <Menu.Item><NavLink to = "/Register">Register</NavLink></Menu.Item>
-        </Menu>
+        </Menu> */}
         <Router></Router>
       </BrowserRouter>
     </div>

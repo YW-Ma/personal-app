@@ -1,11 +1,25 @@
 .loginContainer{
-    background-color: rgba(255,255,255,0.4);
-    margin: 1em;
-    padding: 1em;
-    height: 20em;
-    width: 25em;
-    border-radius: 0.5em;
-    display: flex;
+    // background-image: url("https://cdn.pixabay.com/photo/2020/08/27/00/32/bridge-5520899_1280.jpg");
+    background-image: url("./background2.png");
+    background-repeat: repeat;
+    background-size: 100% auto; //图像的宽高相对于父容器的值
+    height: 100%; //继承App中的height（100vh）
+    display: flex; //用flex来居中子元素
+    align-items: center;
     justify-content: center;
-    align-items: space-around;
+    // 注意，居中展示tab也可以用margin: auto auto实现。
+    .login{
+        background-color: rgba(255,255,255,0.4);
+        padding: 1em;
+        height: 20em;
+        width: 25em;
+        border-radius: 0.5em;
+        // 还希望tab名字能居中，修改antd属性样式（不是自己写的className）
+        // 如果想修改全局样式，要加global，这是因为我们用了CSS Module了。
+        :global {
+            .ant-tabs .ant-tabs-nav-list{
+                margin: auto auto;
+            }
+        }
+    }
 }
