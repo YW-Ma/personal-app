@@ -49,7 +49,7 @@ const InputItem = (props) => {
                             disabled={timing}
                             onClick={handleClickCaptcha}
                         >
-                            {timing ? "xxx秒":"发送验证码"}
+                            {timing ? `${count}秒`:"发送验证码"}
                         </Button>
                     </Col>
                 </Row>

@@ -1,0 +1,27 @@
+@import '~antd/es/style/themes/default.less'; // 这里面定义了很多颜色，方便取用
+
+.registerContainer{
+    // background-image: url("https://cdn.pixabay.com/photo/2020/08/27/00/32/bridge-5520899_1280.jpg");
+    background-image: url("../../imgs/background2.png");
+    background-repeat: repeat;
+    background-size: 100% auto; //图像的宽高相对于父容器的值
+    height: 100%; //继承App中的height（100vh）
+    display: flex; //用flex来居中子元素
+    align-items: center;
+    justify-content: center;
+    .register{
+        background-color: rgba(255,255,255,0.4);
+        padding: 1em;
+        height: 20em;
+        width: 25em;
+        border-radius: 0.5em;
+    }
+}
+
+.other {
+    margin-top: 24px;
+    line-height: 22px;
+    .login {
+        float: right; //在右侧浮动
+    }
+}
