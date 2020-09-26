@@ -2,65 +2,20 @@ import React, { useState } from 'react';
 import {
   Form,
   Input,
-  Tooltip,
-  Cascader,
   Select,
   Row,
   Col,
   Checkbox,
   Button,
-  AutoComplete,
 } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
 const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
 const formItemLayout = {
   labelCol: {
-    xs: {
-      span: 24,
-    },
     sm: {
       span: 8,
     },
   },
   wrapperCol: {
-    xs: {
-      span: 24,
-    },
     sm: {
       span: 16,
     },
@@ -68,10 +23,6 @@ const formItemLayout = {
 };
 const tailFormItemLayout = {
   wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
     sm: {
       span: 16,
       offset: 8,
@@ -98,20 +49,6 @@ const Register = () => {
       </Select>
     </Form.Item>
   );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-    }
-  };
-
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
 
   return (
     <Form
@@ -120,7 +57,6 @@ const Register = () => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: ['zhejiang', 'hangzhou', 'xihu'],
         prefix: '86',
       }}
       scrollToFirstError
@@ -197,7 +133,7 @@ const Register = () => {
           }}
         />
       </Form.Item>
-      
+
       <Form.Item label="Captcha" extra="We must make sure that your are a human.">
         <Row gutter={8}>
           <Col span={12}>
