@@ -20,7 +20,6 @@ const Register = () => {
     const mainTheme = {
         color: "#1890ff"
     }
-    
 
     return (
         // 背景容器

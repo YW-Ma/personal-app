@@ -40,8 +40,17 @@ const Register = () => {
 
   };
 
-  const prefixSelector = (        // 用得到的小组件
-    <Form.Item></Form.Item>
+  const prefixSelector = (        // 下拉选择框，要用嵌套的Form.Item包裹
+    <Form.Item name="prefix" noStyle>
+      <Select
+        style={{
+          width: 70,
+        }}
+      >
+        <Option value="86">+86</Option>
+        <Option value="01">+01</Option>
+      </Select>
+    </Form.Item>
   );
 
   return (                        // Register组件的内容
@@ -116,7 +125,25 @@ const Register = () => {
         <Input.Password />
       </Form.Item>
 
-      <Form.Item/>
+      <Form.Item
+        name="phone"
+        label="Phone Number"
+        rules={[
+          {
+            required: true,
+            message: "Please input your phone number!",
+          },
+        ]}
+      >
+        <Input
+          addonBefore={prefixSelector}
+          style={{
+            width: '100%',
+          }}
+        >
+        </Input>
+      </Form.Item>
+      
       <Form.Item/>
 
       {/* checkbox与提交Button的位置 */}
