@@ -102,7 +102,11 @@ const Register = () => {
                     setPopover(!popover);       // 【8】 为了每次输入一个密符都重新渲染，要在这里不断修改state（popover那个）
                     if (!value) {
                       setVisible(false);
-                      return promise.reject("请输入密码");
+                      return promise.reject("");
+                    }
+                    if (value.length < 6) {
+                      setVisible(true);
+                      return promise.reject("");
                     }
                     if (value && !visible) {
                       setVisible(true);
@@ -142,7 +146,7 @@ const Register = () => {
                 }
               }),
             ]}
-            hasFeedback                 // 在输入框右侧，可以显示一个绿色勾勾 或者 红色叉叉 作为反馈。
+            hasFeedback                 // 在输入框右侧，可以显示一个绿色勾勾 或者 红色叉叉 作为反馈。 它的效果和validator返回的promise状态有关。
           >
             {/* 使用Input.Password，用户就可以选择是否显示密码明文 */}
             <Input.Password />
