@@ -1,4 +1,5 @@
 import React, { useState }from 'react';
+import { Link } from 'react-router-dom';
 import {
   Form,
   Input,
@@ -213,9 +214,12 @@ const Register = () => {
           <Form.Item
             wrapperCol={{ span: 16, offset: 8 }}
           >
-            <Button type="primary" htmlType="submit">
-              Register
-        </Button>
+            <Row justify="space-between">
+              <Button type="primary" htmlType="submit">
+                Register
+              </Button>
+              <Link to="\login">使用已有账户登陆</Link>
+            </Row>
           </Form.Item>
         </Form>
       </div>
